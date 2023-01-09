@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 使用call 允许使用者调用被使用者的参数
+        var myInfo1 = {
+            name:"lin",
+            lastName:"yao"
+
+        }
+        var myInfo2 = {
+            getName:function(){
+                return this.name
+            },
+            setName:function(name){
+                this.name = name
+                return this.name
+
+            },
+            name:function(){
+                return this.name
+            },
+            lastName(lastName){
+                this.lastName = lastName
+                return this.lastName
+            }
+        }
+        var data = myInfo2.getName.call(myInfo1)
+        console.log(data)
+        // 允许携带参数
+        data = myInfo2.setName.call(myInfo1,"sun")
+        console.log(data)
+
+
+        // 使用apply
+        var data1 = myInfo2.name.apply(myInfo1)
+        console.log(data1)
+        //使用数组接收参数
+        var data1 = myInfo2.lastName.apply(myInfo1,['long'])
+        console.log(data1)
+
+    </script>
+    
+</body>
+</html>

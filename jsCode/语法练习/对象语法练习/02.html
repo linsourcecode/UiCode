@@ -28,6 +28,13 @@
         console.log(b.getAge())
         console.log(b.getLastNameFunction())
         //使用构造器之后，无法直接添加属性，但可以使用对象的原型来进行修改
+        Person.address = "北京"
+        var c  = new Person("1","2",11)
+        // 结果为undefined
+        console.log(c.address)
+        Person.prototype.address = "深圳"
+        var c  = new Person("1","2",11)
+        console.log(c.address)
     </script>
     
 </body>
