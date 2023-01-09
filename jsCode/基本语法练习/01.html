@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章</title>
+</head>
+<body>
+    <script>
+        // 对象的创建方法
+
+        //对象字面变量
+        var myObject = {age:"11",name:"lin"}
+        console.log(myObject)
+        // object 方法
+        var object2= new Object();
+        object2.name = "sun"
+        object2.age =12
+        console.log(object2)
+        //对象属性名的访问
+        console.log(object2.age)
+        console.log(object2['age'])
+        //属性的添加
+        object2.address = "福建"
+        console.log(object2)
+        //属性的删除
+        delete object2.address
+        console.log(object2)
+        // 对象变量名直接赋予使用的是同一个变量名空间
+        var x = object2
+        x.age=13
+        console.log(x)
+        // 对象的函数
+       
+        var obj = {
+            name:"name",
+            fullGetName: function(){
+                // 无法获取值
+                console.log(name)
+                // 允许获取值
+                console.log(this.name)
+                return "1"
+            },
+            // //调用set函数给属性赋值
+            // set name(name){
+            //      this.name = name 
+            // },
+            // get  name(){
+            //       return this.name
+            // }
+
+
+
+
+        }
+     //   console.log(obj.fullGetName())
+      // 对象的set函数
+      console.log(obj.name("lin"))
+         // 对象的get函数
+      console.log(obj.name)
+       
+
+        
+    </script>
+</body>
+</html>

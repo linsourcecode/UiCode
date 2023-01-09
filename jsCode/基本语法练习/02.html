@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 使用构造器可实现批量创建对象的方法
+      function Person(first, last, age, eye) {
+              this.firstName = first;
+              this.lastName = last;
+              this.age = age;
+              this.eyeColor = eye;
+              //允许自定义方法
+              this.getLastNameFunction = function getLastName(){
+                return this.lastName
+              }
+        }
+        var b = new Person("1","2",11)
+        console.log(b.age)
+        // 允许为对象添加方法
+        b.getAge = function(){
+            return this.age
+        }
+        console.log(b.getAge())
+        console.log(b.getLastNameFunction())
+        //使用构造器之后，无法直接添加属性，但可以使用对象的原型来进行修改
+    </script>
+    
+</body>
+</html>
